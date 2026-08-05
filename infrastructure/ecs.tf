@@ -41,7 +41,7 @@ resource "aws_ecs_task_definition" "frontend" {
   container_definitions = jsonencode([
     {
       name      = "frontend"
-      image     = "nginx:alpine"
+      image     = "${aws_ecr_repository.frontend.repository_url}:latest"
       essential = true
 
       portMappings = [
@@ -81,7 +81,7 @@ resource "aws_ecs_task_definition" "backend" {
   container_definitions = jsonencode([
     {
       name      = "backend"
-      image     = "hashicorp/http-echo:1.0"
+      image     = "${aws_ecr_repository.backend.repository_url}:latest"
       essential = true
 
       command = [
