@@ -102,7 +102,14 @@ pipeline {
                 '''
             }
         }
-
+stage('Approve Deployment') {
+    steps {
+        timeout(time: 10, unit: 'MINUTES') {
+            input message: "Deploy build ${BUILD_NUMBER} to Amazon ECS?",
+                  ok: 'Deploy'
+        }
+    }
+}
         stage('Deploy Frontend to ECS') {
             steps {
                 sh '''
