@@ -104,7 +104,7 @@ pipeline {
         }
 stage('Approve Deployment') {
     steps {
-        timeout(time: 10, unit: 'MINUTES') {
+        timeout(time: 60, unit: 'MINUTES') {
             input message: "Deploy build ${BUILD_NUMBER} to Amazon ECS?",
                   ok: 'Deploy'
         }
