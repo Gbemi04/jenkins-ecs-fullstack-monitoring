@@ -84,10 +84,6 @@ resource "aws_ecs_task_definition" "backend" {
       image     = "${aws_ecr_repository.backend.repository_url}:latest"
       essential = true
 
-      command = [
-        "-listen=:8080",
-        "-text=Backend placeholder is running"
-      ]
 
       portMappings = [
         {

@@ -44,3 +44,7 @@ variable "notification_email" {
   default     = ""
   sensitive   = true
 }
+variable "jenkins_admin_cidr" {
+  description = "Public IP CIDR allowed to access Jenkins and SSH"
+  type        = string
+}
