@@ -17,3 +17,13 @@ override.tf.json
 # CLI config
 .terraformrc
 terraform.rc
+# Ignore Terraform state
+terraform.tfstate
+terraform.tfstate.*
+tfplan
+
+# Ignore Terraform variables
+terraform.tfvars
+
+# Ignore Terraform working directory
+.terraform/
